@@ -20,6 +20,7 @@ public class browseOption {
         //浏览器前进
         //driver.navigate().forward();
 
+
         //浏览器刷新
         driver.navigate().refresh();
 
