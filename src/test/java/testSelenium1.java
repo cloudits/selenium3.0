@@ -3,7 +3,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
@@ -59,6 +61,12 @@ public class testSelenium1 {
         element_searchresult=driver.findElement(By.xpath(".//*[@id='container']/div[2]/div/div[2]"));//搜索结果匹配记录的区域定位
         System.out.println(element_searchresult.getText());//输出搜索结果
         Assert.assertNotNull(element_searchtext,"不存在搜索结果");
+
+    }
+
+    @AfterMethod
+    public void tearDown() throws Exception {
+        driver.quit();
 
     }
 }
