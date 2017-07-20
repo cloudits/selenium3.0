@@ -19,12 +19,29 @@ public class dataProvider {
         System.out.println(x);
     }
 
+    @Test(dataProvider = "ExcelData")
+    //有几列写几个形参即可
+    public void mycase2(String x,String y,String z)
+    {
+        System.out.println(x+y+z);
+    }
+
     @Test(dataProvider = "TXTData")//由于数据源没有说明名称，所以这里使用方法名
     public void TXTTest(String data) throws IOException {
 
         System.out.println("Data is:"+data);
         //Assert.assertTrue(data.contains("Test"));
     }
+    @DataProvider
+    public Object[][] ExcelData()
+    {
+        ExcelReader excelReader = new ExcelReaderImpl();
+        String excelUrl = "D:/ExcelReadTest.xlsx";
+
+        String[][] excelArray = excelReader.readExcel(excelUrl);
+        return excelArray;
+    }
+
     @DataProvider
     public Object[][] TXTData() throws IOException
         {
