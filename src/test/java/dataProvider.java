@@ -45,7 +45,7 @@ public class dataProvider {
     @DataProvider
     public Object[][] TXTData() throws IOException
         {
-            //设置需要导入的txt文件路径，并调用txt转化为以为数组功能
+            //设置需要导入的txt文件路径，并调用txt转化为一维数组功能
             File directory = new File("");//设定为当前文件夹
             String basedir=directory.getCanonicalPath();//获取标准的路径C:\Users\cloudchen\IdeaProjects\selenium3
             String Dir = basedir+"\\src\\main\\files\\TXTData.txt";
