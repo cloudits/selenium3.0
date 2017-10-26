@@ -1,3 +1,5 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -20,6 +22,18 @@ public class dataProvider {
     }
 
     @Test(dataProvider = "ExcelData")
+    public void Ip168(String phonenum,String expected)
+    {
+        System.setProperty("webdriver.gecko.driver", "C:\\Windows\\System32\\geckodriver.exe");
+        System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox51\\firefox.exe");
+        WebDriver driver=new FirefoxDriver();
+        Ip168 myip=new Ip168(driver);
+        String result=Ip168.searchphone(phonenum+"8888");
+        System.out.println(result);
+        expected="吉林";
+        Assert.assertTrue(result.contains(expected));
+    }
+    @Test(dataProvider = "ExcelData")
     //有几列写几个形参即可
     public void mycase2(String x,String y,String z)
     {
@@ -36,7 +50,7 @@ public class dataProvider {
     public Object[][] ExcelData()
     {
         ExcelReader excelReader = new ExcelReaderImpl();
-        String excelUrl = "D:/ExcelReadTest.xlsx";
+        String excelUrl = "D:/temp//ExcelReadTest.xlsx";
 
         String[][] excelArray = excelReader.readExcel(excelUrl);
         return excelArray;
