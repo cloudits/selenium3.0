@@ -61,12 +61,13 @@
             <artifactId>poi-ooxml-schemas</artifactId>
             <version>3.10-FINAL</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.github.detro.ghostdriver/phantomjsdriver -->
+        <!-- https://mvnrepository.com/artifact/com.codeborne/phantomjsdriver -->
         <dependency>
-            <groupId>com.github.detro.ghostdriver</groupId>
+            <groupId>com.codeborne</groupId>
             <artifactId>phantomjsdriver</artifactId>
-            <version>1.1.0</version>
+            <version>1.4.3</version>
         </dependency>
+
 
 
     </dependencies>
