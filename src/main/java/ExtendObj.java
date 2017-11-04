@@ -1,9 +1,14 @@
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.Select;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.Set;
 
 /**
@@ -25,7 +30,52 @@ public class ExtendObj {
        // alertopt();
        // promptopt();
        // iframeopt();
-        newwindow();
+       // newwindow1();
+        //onmouseover();
+        scrshot();
+        selectobj();
+    }
+
+    public static void selectobj()
+    {
+        driver.navigate().to("http://127.0.0.1/selenium3/htmlbasic.html");
+        WebElement element=driver.findElement(By.xpath("html/body/form/select"));
+        Select select=new Select(element);
+        select.selectByIndex(2);
+    }
+
+     public static void scrshot()
+    {
+        driver.navigate().to("http://localhost/selenium3/alerthtml.html");
+        File screenShotFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(screenShotFile,new File("D:/test.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public static void onmouseover()
+    {
+        driver.navigate().to("http://localhost/selenium3/alerthtml.html");
+        Actions MyA=new Actions(driver);
+        WebElement button4=driver.findElement(By.xpath("//button[4]"));
+        MyA.moveToElement(button4).perform();
+    }
+    public static void newwindow1()
+    {
+        driver.navigate().to("http://localhost/selenium3/alerthtml.html");
+        driver.findElement(By.xpath("//a")).click();
+        String handle=driver.getWindowHandle();//获取当前句柄
+        for(String handles:driver.getWindowHandles())
+        {
+            if(handles.equals(handle))
+                continue;
+            else
+                driver.switchTo().window(handles);
+
+        }
+        System.out.println(driver.findElement(By.xpath("html/body/table/tbody/tr[2]/td")).getText());
     }
     public static void newwindow()
     {
@@ -44,7 +94,7 @@ public class ExtendObj {
         driver.navigate().to("http://127.0.0.1/selenium3/iframe.html");
         driver.switchTo().frame("sidebar");
         System.out.println(driver.findElement(By.xpath("html/body")).getText());
-        driver.switchTo().parentFrame();
+        //driver.switchTo().parentFrame();
         driver.switchTo().frame(1);
         System.out.println(driver.findElement(By.xpath("html/body")).getText());
         driver.switchTo().defaultContent();
