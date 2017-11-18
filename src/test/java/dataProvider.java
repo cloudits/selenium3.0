@@ -50,8 +50,7 @@ public class dataProvider {
     public Object[][] ExcelData()
     {
         ExcelReader excelReader = new ExcelReaderImpl();
-        String excelUrl = "D:/temp//ExcelReadTest.xlsx";
-
+        String excelUrl = "D:/temp//ExcelReadTest1.xlsx";
         String[][] excelArray = excelReader.readExcel(excelUrl);
         return excelArray;
     }
