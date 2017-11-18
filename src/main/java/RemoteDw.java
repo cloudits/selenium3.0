@@ -13,5 +13,7 @@ public class RemoteDw {
         DesiredCapabilities chromedc=DesiredCapabilities.chrome();
         WebDriver driver=new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"),chromedc);
         driver.get("http://www.baidu.com");
+        WebDriver driver1=new RemoteWebDriver(new URL("http://127.0.0.1:5556/wd/hub"),chromedc);
+        driver1.get("http://www.baidu.com");
     }
 }
