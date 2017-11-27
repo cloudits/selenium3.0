@@ -7,3 +7,5 @@ C
 phantomjsdriver.log,0\b\0b391fda8efbde3f6838694791ef1d9b331a5714
 =
 selenium3.iml,7\1\71fd0a21c4156935df09315a67e5896181e7a2d4
+9
+	node.json,b\1\b1d24d51ca2215296f61ebbc43db7b6e4629a0c7

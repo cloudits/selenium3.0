@@ -6,6 +6,8 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.plugins.util.ResolverUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 
 /**
