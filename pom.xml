@@ -75,6 +75,13 @@
         </dependency>
 
 
+        <!-- https://mvnrepository.com/artifact/net.lightbody.bmp/browsermob-core -->
+        <dependency>
+            <groupId>net.lightbody.bmp</groupId>
+            <artifactId>browsermob-core</artifactId>
+            <version>2.1.5</version>
+        </dependency>
+
 
 
 
