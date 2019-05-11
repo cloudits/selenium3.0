@@ -16,6 +16,7 @@ import org.openqa.selenium.support.PageFactory;
 public class chromeBrowseStart {
     private static final Logger logger = LogManager.getLogger(ResolverUtil.Test.class.getName());
     public static void main(String[] args) {
+        //github更新
         WebDriver driver=new ChromeDriver();
         driver.navigate().to("http://www.baidu.com");
         logger.info("info message");
